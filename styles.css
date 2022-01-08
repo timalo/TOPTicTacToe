@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+    background-color: #13bbf5;
+}
+
+body h1 {
+    margin-top: 20px;
+}
+
+.playerInfo {
+    height: 30vh;
+    width: 30vh;
+    background-color: lightgreen;
+    border: 5px solid black;
+    border-radius: 25px;
+    margin: 0px 5%;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+#gameDiv {
+    border: solid 5px black;
+    height: 70vh;
+    width: 70vh;
+    min-width: 70vh;
+    background-color: grey;
+    margin: auto;
+}
+
