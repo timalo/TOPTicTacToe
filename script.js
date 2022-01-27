@@ -1,12 +1,15 @@
-const gameBoard = () => {
-    let board = [];
-}
+const gameBoard = (() => {
+    let board = new Array(9);
+    return {board};
+})();
 
-const player = (name) => {
+const playerFactory = (name) => {
     let points = 0;
     const getName = () => console.log(name);
-    return {getName};
+    const getPoints = () => points;
+    return {getName, getPoints};
 };
+
 
 const gameController = () => {
 

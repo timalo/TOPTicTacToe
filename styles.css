@@ -25,6 +25,22 @@ body h1 {
     align-items: center; 
 }
 
+.playerInfo{
+    font-size: 22px;
+}
+
+#player1_points{
+    font-size: 62px;
+    color: blue;
+    font-weight: bold; 
+}
+
+#player2_points{
+    font-size: 62px;
+    color: purple;
+    font-weight: bold; 
+}
+
 #gameDiv {
     height: 40vw;
     width: 40vw;
