@@ -8,12 +8,12 @@ body h1 {
 }
 
 .playerInfo {
-    height: 30vh;
-    width: 30vh;
+    height: 40vh;
+    width: 20vw;
     background-color: lightgreen;
+    min-width: 15vw;
     border: 5px solid black;
     border-radius: 25px;
-    margin: 0px 5%;
 }
 
 #container {
@@ -26,11 +26,22 @@ body h1 {
 }
 
 #gameDiv {
-    border: solid 5px black;
-    height: 70vh;
-    width: 70vh;
-    min-width: 70vh;
+    height: 40vw;
+    width: 40vw;
+    min-width: 50vw;
+    min-height: 70vh;
     background-color: grey;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid black;
+    background-color: #13bbf5;
 }
 
+.gameBox{
+    width: 32%;
+    height: 32%;
+    border-radius: 25px;
+    background-color: gray;
+    margin: auto;
+}
