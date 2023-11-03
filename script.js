@@ -71,12 +71,14 @@ const gameController = (function() {
                 playerTurn++;
                 gameBoard.renderBoard();
                 checkWin();
+                turnVisualizer.showTurn();
             }
             else {
                 gameBoard.setBox(id, "O");
                 playerTurn++;
                 gameBoard.renderBoard();
                 checkWin();
+                turnVisualizer.showTurn();
             }
         }
     }
@@ -150,9 +152,10 @@ const gameController = (function() {
         player2.resetScore();
         document.getElementById("P1score").innerHTML = "Score: " + player1.getScore();
         document.getElementById("P2score").innerHTML = "Score: " + player2.getScore();
-        gameOver = false;
+        playerTurn = 1;
         gameResult = 0;
         gameBoard.resetBoard();
+        turnVisualizer.showTurn();
     }
 
     const gameEnd = (result) => {
@@ -166,6 +169,7 @@ const gameController = (function() {
                 gameResult = 0;
                 document.querySelector(".resultText").innerHTML = "";
                 playerTurn = 1;
+                turnVisualizer.showTurn();
             }, 3000)
         }
         else if(result == 2){
@@ -177,22 +181,43 @@ const gameController = (function() {
                 gameResult = 0;
                 document.querySelector(".resultText").innerHTML = "";
                 playerTurn = 1;
+                turnVisualizer.showTurn();
             }, 3000)
         }
-        else if(result == 3){
+        else if(result == -1){
             document.querySelector(".resultText").innerHTML = "It's a draw!";
             setTimeout(() => {
                 gameBoard.resetBoard();
                 gameResult = 0;
                 document.querySelector(".resultText").innerHTML = "";
                 playerTurn = 1;
+                turnVisualizer.showTurn();                
             }, 3000)
+
         }
     }
 
     initOnClick();
+
     return {
         getPlayerTurn
     }
 })();
 
+const turnVisualizer = (function() {
+    const showTurn = () => {
+        let turn = gameController.getPlayerTurn();
+        console.log("trying to show turn with value: " + turn);
+        if (turn % 2 == 1){
+            document.getElementById("P1").style.border = "10px solid green";
+            document.getElementById("P2").style.border = "5px solid black";
+        }
+        else if (turn % 2 == 0){
+            document.getElementById("P2").style.border = "10px solid green";
+            document.getElementById("P1").style.border = "5px solid black";
+        }
+    }
+    return {
+        showTurn
+    } 
+})();

@@ -38,6 +38,7 @@ body {
 }
 
 .statWindow {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,4 +82,8 @@ body {
     margin-top: 2%;
     font-size: 4em;
     font-weight: 800;
+}
+
+#P1 {
+    border: 10px solid green;
 }
